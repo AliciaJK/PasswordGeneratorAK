@@ -10,6 +10,13 @@ function writePassword() {
 
 }
 
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//dont really get what Im going here
+function generatePassword(){}
+
+
+
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
@@ -24,7 +31,7 @@ var specialChar = ["!", "@", "#", "$", "%","^", "&", "*", "(", ")", ".", ",", ">
 // need the use to select generate passoword
 // this will be linked to the generateBtn above. 
 
-
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // 1 need pop up asking for passowrd length
 var passwordLength = prompt("How many characters is your password?")
 
@@ -40,12 +47,7 @@ var userCaps = confirm("Do you want capital letters?")
 // do they want lower case 
 var userLowercase = confirm("Do you want lowercase letters?")
 
-
-//i is the counter (tells how long the passowrd needs to be by taking the user input of length )
-for(var i=0;i < passwordLength;i++)
-{var index = Math.floor(Math.random() * alphaCaps.length);
-
-console.log(alphaCaps[index])
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // if  user select  A and B and D then concat those & then random select
 
 if (userNum===true && userLowercase===true && userCaps===true && userSpChar===true){
@@ -53,28 +55,38 @@ if (userNum===true && userLowercase===true && userCaps===true && userSpChar===tr
 passwordArray = userNum.concat(userLowercase, userCaps, userSpChar);
 console.log(passwordArray)
 
-  } else if(userNum===false && userLowercase===true && userCaps===true && userSpChar===true);
+  } else if(userNum===false && userLowercase===true && userCaps===true && userSpChar===true){
   // then concat true lists 
-  passwordArray = userSpChar.concat(userLowercase, userCaps);
+  passwordArray = userSpChar.concat(userLowercase, userCaps)
   console.log(passwordArray)
 
-  } else if (userNum===false && userLowercase===false && userCaps===true && userSpChar===true);
+  } else if(userNum===false && userLowercase===false && userCaps===true && userSpChar===true){
   // then concat true lists 
   passwordArray = userSpChar.concat(userCaps);
   console.log(passwordArray)
 
-  } else if (userNum===false && userLowercase===false && userCaps===false && userSpChar===true);
+  } else if(userNum===false && userLowercase===false && userCaps===false && userSpChar===true){
   // then concat true lists
   passwordArray = userSpChar.concat(userLowercase, userCaps);
   console.log(passwordArray)
 
-  } else if(userNum===false && userLowercase===false && userCaps===false && userSpChar===false);
+  } else if(userNum===false && userLowercase===false && userCaps===false && userSpChar===false){
   // then end the whole thing
-  }
 
+  } else if(userNum===true && userLowercase===false && userCaps===true && userSpChar===true){
+  // then concat true lists
+  passwordArray = userSpChar.concat(userNum, userCaps);
+  console.log(passwordArray)
+}
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+//i is the counter (tells how long the passowrd needs to be by taking the user input of length )
+for(var i=0;i < passwordLength;i++)
+{var index = Math.floor(Math.random() * passwordArray.length);
 
+console.log(alphaCaps[index])
 // now randomize the variable you just listed. 
-
+function shuffle(passwordArray)
 
 // print passwork in this box       <button id="generate" class="btn">Generate Password</button>
 
